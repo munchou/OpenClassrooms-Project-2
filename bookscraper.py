@@ -130,6 +130,8 @@ for link_to_category in categories_links[1:]:
             product_description = "No description"
         category = soup.find_all('a')[3].text
         review_rating = f"{p[2]['class'][1]} stars"
+        if f"{p[2]['class'][1]}" == "One":
+            review_rating = "One star"
         
         #Getting a clean title without special characters and without losing the spaces
         clean_title = ""
