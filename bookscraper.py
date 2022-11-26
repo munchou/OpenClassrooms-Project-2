@@ -32,7 +32,7 @@ for link_to_category in categories_links[1:]:
     if page.ok:
         soup = BeautifulSoup(page.text, 'html.parser')
         cat_name = soup.find('li', class_='active').text
-        print(cat_name)
+        print("Current category: " + cat_name)
 
 
     #Extracting the links depending on if there are several pages or only one
@@ -148,8 +148,10 @@ for link_to_category in categories_links[1:]:
         imgurl = main_url + f"{soup.find('img')['src'][6:]}"
         imgdl = requests.get(imgurl, stream = True)
         #Use of Path (pathlib) to get the whole url of the image, then keep only the final segment, which is the original name of the jpg file
-        img_path = Path(imgurl).parts[-1]
-        getimg = open(f"{img_dir}/{img_path}", 'wb')
+        #img_path = Path(imgurl).parts[-1]
+        #getimg = open(f"{img_dir}/{img_path}", 'wb')
+        #Change of plan: give the images the name of their respective books
+        getimg = open(f"{img_dir}/{clean_title}.jpg", 'wb')
         getimg.write(imgdl.content)
         getimg.close()
 
