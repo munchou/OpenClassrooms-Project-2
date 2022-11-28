@@ -76,10 +76,10 @@ for link_to_category in categories_links[1:]:
                     links.append(catalog_url + book_link[9:])
 
     #Creating the directories for the books' categories and the books' covers
-    directory = f"{cat_name}"
+    directory = f"data/{cat_name}"
     parent_dir = "./"
     pathtest = os.path.join(parent_dir, directory)
-    img_dir = os.path.join(cat_name, "Books Covers")
+    img_dir = os.path.join(directory, "Books Covers")
     try: #to check if the directory already exists and bypass the fact that it already exists
         os.makedirs(pathtest, exist_ok = True)
         os.makedirs(img_dir, exist_ok = True)
