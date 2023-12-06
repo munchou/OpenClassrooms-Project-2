@@ -4,6 +4,9 @@
 
 _Testé sous Windows 10 et Python 3.10.2_
 
+# Preview
+![img](P02_webscraper.gif)
+
 # Objectifs
 Le programme est un "scraper", il a pour but de récupérer des informations de tous les livres du site [books.toscrape.com](http://books.toscrape.com) et de les organiser (en les enregistrant dans des dossiers, sous-dossiers, etc.).
 Chaque dossier correspond à une catégorie, laquelle contient un dossier "Books Covers" dans lequel sont téléchargées les images des couvertures des livres, et un fichier CSV (dont le nom est le même que la catégorie) qui contient les informations de chaque livre (nom, description, etc.).
